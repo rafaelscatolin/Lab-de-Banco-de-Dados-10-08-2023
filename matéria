@@ -12,3 +12,17 @@ SIZE 10M
 \\ SELECT selecionar/mostrar registros
 
 \\ Alterar o tamanho de um tablespace
+\\1. redimensionando o datafile
+ALTER DATABASE
+DATAFILE 'caminho\nome do datafile.dbf'
+RESIZE novo_tamanho;
+
+\\2. Adicionando um novo datafile
+ALTER TABLESPACE " "nome do tablespace"
+ADD DATAFILE 'caminho/nome do novo datafile.dbf'
+SIZE tamanho;
+
+\\Exemplo:
+\\adicionando um novo datafile
+ALTER TABLESPACE 'TBLS5W_768377"
+ADD DATAFILE
