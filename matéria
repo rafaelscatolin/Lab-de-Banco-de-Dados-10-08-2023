@@ -1,0 +1,14 @@
+\\usuario: laboratorio@grad
+\\senha: unaerp
+
+CREATE TABLESPACE "TBLS5W_768377"
+DATAFILE 'C:\APP\ORACLE\ORADATA\GRAD\DATAFILE\TBLS5W_768377.DBF'
+SIZE 10M
+;
+
+\\ SELECT TABLESPACE_NAME FROM DBA_TABLESPACE lista o nome dos tablespaces de um BD
+
+\\ DESCRIBE ou DESC mostra a estrutura de uma tabela
+\\ SELECT selecionar/mostrar registros
+
+\\ Alterar o tamanho de um tablespace
