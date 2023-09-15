@@ -161,8 +161,48 @@ ADD DTI_CURSO DATE;
 ALTER TABLE "CURSO"
 DROP CONSTRAINT PK_CURSO;
 
+8 - Adicionar o código do curso na tabela aluno e implementar a integridade referencial entre as tabelas (ALUNO E CURSO)
+ALTER TABLE "ALUNO"
+ADD COD_CURSO NUMBER(3);
 
+ALTER TABLE "CURSO"
+ADD CONSTRAINT PK_CURSO PRIMARY KEY(COD_CURSO);
 
+ALTER TABLE "ALUNO"
+ADD CONSTRAINT FK_ALUNO_CURSO FOREIGN KEY (COD_CURSO) REFERENCES CURSO (COD_CURSO);
+
+Excluir/apagar tabela
+DROP TABLE - é o comando usado para apagar uma tabela, contudo, a tabela não pode estar referenciada com outra tabela
+
+Exemplo
+1 - Excuir a tabela CURSO
+DROP TABLE CURSO;
+(*) table referenciada com a tabela aluno
+
+ALTER TABLE ALUNO
+DROP CONSTRAINT FK_ALUNO_CURSO;
+
+DROP TABLE CURSO;
+
+2 - Excluir a tabela TESTE
+DROP TABLE TESTE;
+
+CRIAR UMA TABELA A PARTIR DE UMA TABELA JÁ EXISTENTE
+Sintaxe:
+CREATE TABLE "nome da tabela"
+AS SELECT atributos(s) FROM "nome da tabela"
+
+Exemplo:
+CREATE TABLE "ALUNO_FRAG"
+AS SELECT ID_ALUNO, NOM_ALUNO, DTN_ALUNO
+FROM ALUNO;
+
+Se quisesse com todos os atributos
+CREATE TABLE "ALUNO_FRAG"
+AS SELECT * FROM ALUNO;
+
+ALTER TABLE "ALUNO_FRAG"
+ADD CONSTRAINT PK_ALUNO_FRAG PRIMARY KEY (ID_ALUNO);
 
 
 
