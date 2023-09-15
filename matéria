@@ -114,6 +114,57 @@ CONSTRAINT FK_CONTATO_UNIDADE_CONDOMINIO FOREIGN KEY (CNPJ_CONDOMINIO) REFERENCE
 CONSTRAINT FK_CONTATO_UNIDADE_UNIDADE FOREIGN KEY (NUM_UNIDADE) REFERENCES UNIDADE
 );
 
+\\\Aula dia 14/09/2023
+
+Alteração de tabelas
+ALTER TABLE - comandoutilizado para alterar a estrutura de tabelas, permitindo realizar mudanças nos atributos e nas constraints
+ADD - adicionar atributos ou constraints
+MODIFY - modificar atributos (tipos do atributo e/ou tamanho do espaço de armazenamento do atributo)
+-DROP - excluir atributos ou constraints
+
+Sintaxe:
+ALTER TABLE "nome da tabela"
+[operação: ADD | MODIFY | DROP] parâmetros de cada operação
+
+Exemplo:
+1 - Adicionar dois novos atributos na tabela ALUNO: RG_ALUNO VARCHAR2(11) E EML_ALUNO VARCHAR2(40)
+ALTER TABLE "ALUNO"
+ADD (RG_ALUNO VARCHAR 2 (11), EM_ALUNO VARCHAR2(4));
+
+2 - Ajustar o tamanho do atributo EML_ALUNO (VARCHAR2(40)
+ALTER TABLE "ALUNO"
+MODIFY EML_ALUNO VARCHAR2(40);
+
+3 - Adicionar uma constraint a tabela curso - chave primária atributo cod_curso
+CREATE TABLE CURSO
+(cod_curso NUMBER(3),
+nom_curso VARCHAR2(30),
+tmp_curso NUMBER(1)
+);
+
+ALTER TABLE CURSO
+ADD CONSTRAINT PK_CURSO PRIMARY KEY (COD_CURSO);
+
+4 - Modificar o atributo nom_curso para que ele seja obrigatório
+ALTER TABLE "CURSO"
+MODIFY nom_curso VARCHAR2(30) NOT NULL:
+
+5 Excluir o atributo tmp_curso da tabela CURSO
+ALTER TABLE "CURSO"
+DROP COLUMN tmp_curso;
+
+6 - Adicionar a data de inicio do curso (dti_curso data)
+ALTER TABLE "CURSO"
+ADD DTI_CURSO DATE;
+
+7 - Excluir a chave primária da tabela CURSO
+ALTER TABLE "CURSO"
+DROP CONSTRAINT PK_CURSO;
+
+
+
+
+
 
 
 
