@@ -204,8 +204,41 @@ AS SELECT * FROM ALUNO;
 ALTER TABLE "ALUNO_FRAG"
 ADD CONSTRAINT PK_ALUNO_FRAG PRIMARY KEY (ID_ALUNO);
 
+/////////Aula de 21/09/2023
 
+AUTO INCREMENTO NO ORACLE (SEQUENCE)
+CRIAÇÃO DE SEQUENCE
+CREATE SEQUENCE - comando utilizado para criar uma sequência (auto incremento)
+Sintaxe:
+CREATE SEQUENCE "nome da sequência"
+START WITH n
+INCREMENT BY n
+MAXVALUE n
+MINVALUE n
+CYCLE | NOCYCLE
 
+Exemplo:
+CREATE SEQUENCE "SEQ_ALUNO"
+START WITH 1 INCREMENT BY 1;
+
+Atribuir o papel de DBA
+GRANT DBA TO "NOME DO USUÁRIO"
+GRANT DBA TO "US_CODIGO";
+
+USER_SEQUENCES - tabela que armazena as sequências criadas pelo usuário
+SELECT SEQUENCE_NAME FROM USER_SEQUENCE;
+
+Manipular sequência
+CURRVAL - retornar o valor atual da sequência
+NEXTVAL - próximo valor para a sequência (incremento)
+
+ALTERAR UMA SEQUÊNCIA
+ALTER SEQUENCE "nome da sequência"
+parâmetro(s) que deseja alterar
+(*) não pode alterar o valor inicial de uma sequência
+
+EXCLUIR UMA SEQUÊNCIA
+DROP SEQUENCE "nome da sequência"
 
 
 
