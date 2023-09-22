@@ -240,5 +240,12 @@ parâmetro(s) que deseja alterar
 EXCLUIR UMA SEQUÊNCIA
 DROP SEQUENCE "nome da sequência"
 
+INSERT - inserir registro em uma tabela
+sintaxe:
+INSERT INTO "nome da tabela"(atributo(s))
+VALUES (valor(es));
 
+Exemplo:
+INSERT INTO ALUNO(ID_ALUNO, NOM_ALUNO, DTN_ALUNO, CPF_ALUNO, SEX_ALUNO, RG_ALUNO, EML_ALUNO, COD_CURSO) VALUES 
+(SEQ_ALUNO.NEXTVAL, 'João Carlos', TO_DATE('07/01/2003'), '12345678901', 'M', '99.999.999', 'joaozinho@unaerp.br', 1);
 
