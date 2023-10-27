@@ -51,3 +51,6 @@ TO_DATE() - converte caracteres/string em datas
 TO_CHAR() - converte datas em caracteres - pode-se especificar o formato da data.
 SYSDATE() - retorna a data do sistema onde está o servidor de banco de dados.
 
+10 - Mostrar o nome dos pacientes que fazem aniversário no mês corrente.
+SELECT NOM_PACIENTE NOME FROM PACIENTE
+WHERE TO_CHAR(SYSDATE, 'MM') = TO_CHAR(DTN_PACIENTE, 'MM');
