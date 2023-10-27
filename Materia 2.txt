@@ -33,7 +33,14 @@ GROUP BY EL.NOM_EXAME;
 
 MAX() - retorna o maior valor encontrado, caso o atributo seja
 do tipo caracter ou string será considerada a ordem do alfabeto
+
 8 - Mostar o nome do médico que recebe o maior salário
 SELECT NOM_MEDICO FROM MEDICO WHERE
 SAL_MEDICO = (SELECT MAX(SAL_MEDICO) FROM MEDICO);
+
+MIN() - retorna o menor valor encontrado, cado o atributo seja
+do tipo caracter ou string será considerada a ordem do alfabeto
+
+9 - Mostrar o nome do exame que inicia com a letra mais próxima do início do alfabeto
+SELECT MIN(NOM_EXAME) EXAME FROM EXAME;
 
