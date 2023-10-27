@@ -46,3 +46,8 @@ do tipo caracter ou string será considerada a ordem do alfabeto
 9 - Mostrar o nome do exame que inicia com a letra mais próxima do início do alfabeto
 SELECT MIN(NOM_EXAME) EXAME FROM EXAME;
 
+Funções Oracle para manipulação de datas
+TO_DATE() - converte caracteres/string em datas
+TO_CHAR() - converte datas em caracteres - pode-se especificar o formato da data.
+SYSDATE() - retorna a data do sistema onde está o servidor de banco de dados.
+
