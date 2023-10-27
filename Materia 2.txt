@@ -1,3 +1,5 @@
+Aula do dia 26/10/2023
+
 Funções agregadas
 AVG() - só pode ser utilizada em atributos numéricos - retorna a média
 1 - Mostrar o valor médio do salário que os médicos recebem
