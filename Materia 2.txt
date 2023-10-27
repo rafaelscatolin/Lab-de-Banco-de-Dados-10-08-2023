@@ -1,3 +1,13 @@
 Funções agregadas
 AVG() - só pode ser utilizada em atributos numéricos - retorna a média
-1- 
+1 - Mostrar o valor médio do salário que os médicos recebem
+SELECT AVG(SAL_MEDICO) SALARIO_MEDIO FROM MEDICO;
+
+2 - Mostrar o nome dos médicos que recebem salário acima da média
+SELECT NOM_MEDICO NOME FROM MEDICO
+WHERE SAL_MEDICO >
+(SELECT AVG(SAL_MEDICO) SALARIO_MEDIO FROM MEDICO);
+
+SUM() - só pode ser utilizada em atributos numéricos - retorna a somatória
+3 - Mostrar o total gasto com o pagamento de médicos
+SELECT SUM(SAL_MEDICO) TOTAL FROM MEDICO;
