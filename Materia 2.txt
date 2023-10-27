@@ -11,3 +11,9 @@ WHERE SAL_MEDICO >
 SUM() - só pode ser utilizada em atributos numéricos - retorna a somatória
 3 - Mostrar o total gasto com o pagamento de médicos
 SELECT SUM(SAL_MEDICO) TOTAL FROM MEDICO;
+
+COUNT() - retorna o número de linhas encontradas (contador)
+4 - Mostrar quantos pacientes são do estado de SP
+SELECT COUNT(COD_PACIENTE) QTD FROM PACIENTE WHERE
+TO_UPPER(UF_PACIENTE) = 'SP';
+
