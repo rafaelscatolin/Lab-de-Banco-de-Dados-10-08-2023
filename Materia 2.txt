@@ -17,3 +17,23 @@ COUNT() - retorna o número de linhas encontradas (contador)
 SELECT COUNT(COD_PACIENTE) QTD FROM PACIENTE WHERE
 TO_UPPER(UF_PACIENTE) = 'SP';
 
+5 - Mostrar a quantidade de pacientes por estado
+SELECT UF_PACIENTE ESTADO, COUNT(COD_PACIENTE) QTD
+FROM PACIENTE GROUP BY UF_PACIENTE;
+
+6 - Mostrar a quantidade de pacientes por sexo
+SELECT SEX_PACIENTE SEXO, COUNT(COD_PACIENTE) QTD
+FROM PACIENTE GROUP BY SEX_PACIENTE;
+
+7 - Mostrar a quantidade de exames realizados por tipo de exame
+SELECT E.NOM_EXAME EXAME, COUNT(EL.COD_EXAME) QTD
+FROM EXAME E, EXAME_LABORATORIO EL
+WHERE E.COD_EXAME = EL.COD_EXAME
+GROUP BY EL.NOM_EXAME;
+
+MAX() - retorna o maior valor encontrado, caso o atributo seja
+do tipo caracter ou string será considerada a ordem do alfabeto
+8 - Mostar o nome do médico que recebe o maior salário
+SELECT NOM_MEDICO FROM MEDICO WHERE
+SAL_MEDICO = (SELECT MAX(SAL_MEDICO) FROM MEDICO);
+
