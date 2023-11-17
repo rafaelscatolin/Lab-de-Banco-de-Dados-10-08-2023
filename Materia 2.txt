@@ -66,13 +66,41 @@ da ocorrência de um evento programado.
 
 Sintaxe:
 CREATE [OR REPLACE] TRIGGER "nome do gatilho"
+-- quando o gatilho será executado
 BEFORE | AFTER INSERT OR UPDATE OR DELETE ON "nome da tabela"
+-- como o gatilho atuará
+-- evento (s) que dispara (m) o gatilho
 FOR EACH ROW | STATEMENT
 -- declaração de variáveis, se for necessário
 BEGIN
 -- instruções PL/SQL
 END;
 
+Identificar o evento
+INSERTING
+UPDATING
+DELETING
 
+Pseudo registros
+:new
+:old
 
+Exemplo
+1 - Criar um gatilho para registrar fragmentos da tabela ALUNO em outra tabela
+Tabela ALUNOFRAG (ID_ALUNO, NOM_ALUNO, DTN_ALUNO, SEX_ALUNO)
+-- criar a tabela ALUNOFRAG
+CREATE TABLE ALUNOFRAG AS SELECT ID_ALUNO, NOM_ALUNO, DTN_ALUNO, SEX_ALUNO FROM ALUNO;
 
+CREATE OR REPLACE TRIGGER BKP_FRAG_ALUNO
+AFTER INSERT OR UPDATE OR DELETE ON ALUNO
+FOR EACH ROW
+BEGIN
+IF INSERTING THEN
+INSERT ALUNOFRAG(ID_ALUNO, NOM_ALUNO, DTN_ALUNO, SEX_ALUNO)
+VALUES (:NEW.ID_ALUNO, :NEW.NOM_ALUNO, :NEW.DTN_ALUNO,
+:NEW.SEX_ALUNO);
+ELSIF UPDATING THEN[UPDATE ALUNOFRAG SET ID_ALUNO = :NEW.ID_ALUNO, NOM_ALUNO = 
+:NEW.NOM_ALUNO, DTN_ALUNO = :NEW.DTN_ALUNO, SEX_ALUNO =
+:NEW.SEX_ALUNO WHERE ID_ALUNO = :OLD.ID_ALUNO;
+END IF;
+END;
