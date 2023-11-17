@@ -54,3 +54,25 @@ SYSDATE() - retorna a data do sistema onde está o servidor de banco de dados.
 10 - Mostrar o nome dos pacientes que fazem aniversário no mês corrente.
 SELECT NOM_PACIENTE NOME FROM PACIENTE
 WHERE TO_CHAR(SYSDATE, 'MM') = TO_CHAR(DTN_PACIENTE, 'MM');
+
+
+///////////////////////////////////////////////////
+
+Aula do dia 16/11/2023
+
+Gatilho - Trigger
+Os gatilhos são programas PL/SQL que são executados automaticamente a partir
+da ocorrência de um evento programado.
+
+Sintaxe:
+CREATE [OR REPLACE] TRIGGER "nome do gatilho"
+BEFORE | AFTER INSERT OR UPDATE OR DELETE ON "nome da tabela"
+FOR EACH ROW | STATEMENT
+-- declaração de variáveis, se for necessário
+BEGIN
+-- instruções PL/SQL
+END;
+
+
+
+
