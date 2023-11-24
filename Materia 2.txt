@@ -118,3 +118,17 @@ UPDATE ALUNO SET NOM_ALUNO = 'Edilson Carlos Caritá'
 WHERE NOM_ALUNO = 'Edilson Caritá';
 
 DELETE ALUNO WHERE NOM_ALUNO = 'Edilson Carlos Caritá';
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+Aula do dia 23/11/2023
+
+
+
+
+
+
+
+
+
