@@ -124,7 +124,23 @@ DELETE ALUNO WHERE NOM_ALUNO = 'Edilson Carlos Caritá';
 
 Aula do dia 23/11/2023
 
+Função 
+Sintaxe
+CREATE [OR REPLACE] FUNCTION nome_função (parâmetros - nome tipo)
+RETURN tipo_dado_retorno
+[IS | AS]
+--seção de declaração de variáveis (opcional)
+nome_variável tipo_variável
+BEGIN
+-- instruções PL/SQL
+END;
 
+Exemplo 1:
+Função para retornar a idade/informação temporal a partir de uma data inicial
+CREATE OR REPLACE FUNCTION IDADE(PDATA IN DATE)
+RETURN NUMBER
+IS
+VIDADE NUMBER(3);
 
 
 
